@@ -1,0 +1,29 @@
+{
+  "name": "tristan-api-service",
+  "version": "1.0.0",
+  "description": "API service by Tristan & for Tristan",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "service",
+    "api",
+    "tristan",
+    "nodejs",
+    "hapi"
+  ],
+  "author": "Tristan",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^20.0.3",
+    "useragent": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1"
+  }
+}
