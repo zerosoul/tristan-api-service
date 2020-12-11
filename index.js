@@ -24,8 +24,11 @@ if (process.env.NODE_ENV == "development") {
 dotenv.config({
   path: process.env.NODE_ENV == "development" ? devEnvFile : proEnvFile,
 });
+// 跨域请求设置
 const AllowDomains =
-  process.env.NODE_ENV == "development" ? ["*"] : ["https://*.yangerxiao.com"];
+  process.env.NODE_ENV == "development"
+    ? ["*"]
+    : ["https://zerosoul.github.io", "https://*.yangerxiao.com"];
 const init = async () => {
   const server = Hapi.server({
     port: 3008,
