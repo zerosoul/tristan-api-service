@@ -10,12 +10,14 @@ const proEnvFile = `${__dirname}/.env`;
 
 // 检查配置文件
 if (process.env.NODE_ENV == "production") {
+  console.log("运行在pro环境");
   if (!fs.existsSync(proEnvFile)) {
     console.error("production配置文件不存在");
     process.exit(-1);
   }
 }
 if (process.env.NODE_ENV == "development") {
+  console.log("运行在dev环境");
   if (!fs.existsSync(devEnvFile)) {
     console.error("development配置文件不存在");
     process.exit(-1);
