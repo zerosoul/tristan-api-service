@@ -6,7 +6,7 @@ const Hapi = require("@hapi/hapi");
 const router = require("hapi-router");
 
 const devEnvFile = `${__dirname}/.env.local`;
-const proEnvFile = `${__dirname}/../.env`;
+const proEnvFile = `${__dirname}/.env`;
 
 // 检查配置文件
 if (process.env.NODE_ENV == "production") {
