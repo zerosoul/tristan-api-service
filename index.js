@@ -5,8 +5,8 @@ const fs = require("fs");
 const Hapi = require("@hapi/hapi");
 const router = require("hapi-router");
 
-const devEnvFile = path.resolve(process.cwd(), ".env.local");
-const proEnvFile = path.resolve(`${process.cwd()}/../`, ".env");
+const devEnvFile = `${__dirname}/.env.local`;
+const proEnvFile = `${__dirname}/../.env`;
 
 // 检查配置文件
 if (process.env.NODE_ENV == "production") {
