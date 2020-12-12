@@ -36,6 +36,12 @@ const githubRoute = {
         }
       );
       if (status == 200) {
+        if (data.error && data.error == "incorrect_client_credentials") {
+          return h.response({
+            code: -1,
+            msg: "服务器端Github OAuth 配置有误",
+          });
+        }
         if (data.error && data.error == "bad_verification_code") {
           return h.response({
             code: -1,
