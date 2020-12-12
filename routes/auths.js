@@ -7,7 +7,7 @@ const { getToken } = require("../oauth/github");
 const clients = {
   portal: "f3505bc46977fad4bb33",
 };
-// console.log(process.env.GITHUB_PORTAL_SECRET);
+console.log("github secret", process.env.GITHUB_PORTAL_SECRET);
 const githubRoute = {
   method: "POST",
   path: "/oauth/github/{app?}",
