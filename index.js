@@ -41,6 +41,9 @@ const init = async () => {
     port: 3008,
     host: "localhost",
     routes: {
+      state: {
+        failAction: "log",
+      },
       cors: {
         origin: AllowDomains,
       },
