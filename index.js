@@ -34,7 +34,7 @@ const AllowDomains =
     : [
         "https://zerosoul.github.io",
         "https://*.yangerxiao.com",
-        "http://*.nicegoodthings.com",
+        "https://*.nicegoodthings.com",
       ];
 const init = async () => {
   const server = Hapi.server({
