@@ -31,7 +31,11 @@ console.log("process env 变量", process.env);
 const AllowDomains =
   process.env.NODE_ENV == "development"
     ? ["*"]
-    : ["https://zerosoul.github.io", "https://*.yangerxiao.com"];
+    : [
+        "https://zerosoul.github.io",
+        "https://*.yangerxiao.com",
+        "http://*.nicegoodthings.com",
+      ];
 const init = async () => {
   const server = Hapi.server({
     port: 3008,

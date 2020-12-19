@@ -42,6 +42,7 @@ const githubRoute = {
           });
         }
         if (data.error && data.error == "bad_verification_code") {
+          console.log("error data", { data });
           return h.response({
             code: -1,
             msg: "Code不合法或已过期",
