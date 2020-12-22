@@ -22,6 +22,8 @@
     "axios": "^0.21.0",
     "dotenv": "^8.2.0",
     "hapi-router": "^4.0.1",
+    "iconv-lite": "^0.6.2",
+    "json-eval": "^1.0.9",
     "node-fetch": "^2.6.1",
     "useragent": "^2.3.0"
   },

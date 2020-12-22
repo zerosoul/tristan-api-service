@@ -1,8 +1,7 @@
 // const axios = require("axios").default;
-const axios = require("axios").default;
-const iconv = require("iconv-lite");
-const jsonEval = require("json-eval");
+const fetch = require("node-fetch");
 const boom = require("@hapi/boom");
+
 const uaRoute = {
   method: "GET",
   path: "/service/baidu/ass",
@@ -11,23 +10,19 @@ const uaRoute = {
     let words = [];
 
     try {
-      const res = await axios.get(
+      // const res = await fetch(
+      //   `https://api.oioweb.cn/api/baidu_keyword.php?key=${encodeURIComponent(
+      //     w
+      //   )}`
+      // );
+      const res = await fetch(
         `http://suggestion.baidu.com/su?wd=${encodeURIComponent(
           w
         )}&cb=window.bdsug.sug`,
         {
-          // headers: {
-          //   Accept: "text/javascript; charset=gbk",
-          // },
-          responseType: "arraybuffer",
-          transformResponse: [
-            function (data) {
-              let str = iconv.decode(Buffer.from(data), "gbk");
-              str = iconv.encode(str, "utf8").toString();
-
-              return str;
-            },
-          ],
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
         }
       );
       // const obj = await res.json();
@@ -37,18 +32,16 @@ const uaRoute = {
       //   words = data;
       // }
 
-      console.log(res);
-      const respText = res.data;
+      const respText = await res.text();
       console.log({ respText });
 
       const re = /\([^\)]+\)/g;
       let tmpStr = respText.match(re)[0] || null;
       if (!tmpStr) throw new Error("invalid JSONP response");
       tmpStr = tmpStr.substring(1, tmpStr.length - 1);
-      const obj = jsonEval(tmpStr);
-      console.log({ tmpStr, obj });
-      words = obj.s;
-      console.log({ words });
+
+      words = JSON.parse(tmpStr).s;
+      // console.log({ words });
     } catch (error) {
       console.error(error);
       return boom.serverUnavailable("百度联想词服务暂不可用");
