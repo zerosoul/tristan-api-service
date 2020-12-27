@@ -33,7 +33,9 @@ const AllowDomains =
     ? ["*"]
     : [
         "https://zerosoul.github.io",
+        "https://yangerxiao.com",
         "https://*.yangerxiao.com",
+        "https://nicegoodthings.com",
         "https://*.nicegoodthings.com",
       ];
 const init = async () => {

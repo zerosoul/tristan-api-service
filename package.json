@@ -17,23 +17,23 @@
   "author": "Tristan",
   "license": "ISC",
   "dependencies": {
-    "@hapi/boom": "^9.1.0",
+    "@hapi/boom": "^9.1.1",
     "@hapi/hapi": "^20.0.3",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "cheerio-req": "^1.2.4",
     "dotenv": "^8.2.0",
     "hapi-router": "^4.0.1",
     "iconv-lite": "^0.6.2",
     "json-eval": "^1.0.9",
     "node-fetch": "^2.6.1",
-    "useragent": "^2.3.0"
+    "lighthouse": "^7.0.0",
+    "useragent": "^2.3.0",
+    "chrome-launcher": "^0.13.4"
   },
   "devDependencies": {
-    "chrome-launcher": "^0.13.4",
-    "eslint": "^7.15.0",
-    "eslint-config-prettier": "^7.0.0",
-    "eslint-plugin-prettier": "^3.2.0",
-    "lighthouse": "^7.0.0",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
     "nodemon": "^2.0.6",
     "prettier": "^2.2.1"
   }
