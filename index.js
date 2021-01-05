@@ -26,7 +26,6 @@ if (process.env.NODE_ENV == "development") {
 dotenv.config({
   path: process.env.NODE_ENV == "development" ? devEnvFile : proEnvFile,
 });
-// console.log("process env 变量", process.env);
 // 跨域请求设置
 const AllowDomains =
   process.env.NODE_ENV == "development"
