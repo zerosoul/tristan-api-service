@@ -1,17 +1,15 @@
 const axios = require("axios").default;
 const boom = require("@hapi/boom");
-const bingWPRoute = {
+const covidDataRoute = {
   method: "GET",
-  path: "/service/bing/wp/{days?}",
+  path: "/service/covid/overall",
   handler: async ({ params, query }, h) => {
     const { days = 1 } = params;
     console.log({ params });
     try {
       const resp = await axios.get(
         // mkt=cn-zh
-        `https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=${
-          days || 1
-        }`,
+        `https://lab.isaaclin.cn/nCoV/api/overall?latest=true`,
         {
           headers: {
             Accept: "application/json",
@@ -19,12 +17,12 @@ const bingWPRoute = {
         }
       );
       console.log({ resp });
-      const { images = [], tooltips } = resp.data;
-      if (images.length !== 0) {
+      const { results, success } = resp.data;
+      if (success) {
         return h.response({
           code: 0,
           msg: "正常响应",
-          data: images,
+          data: results,
         });
       } else {
         return boom.badRequest("请求有误");
@@ -35,4 +33,4 @@ const bingWPRoute = {
     }
   },
 };
-module.exports = [bingWPRoute];
+module.exports = [covidDataRoute];

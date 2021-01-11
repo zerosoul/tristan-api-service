@@ -3,7 +3,7 @@ const axios = require("axios").default;
 const iconv = require("iconv-lite");
 const jsonEval = require("json-eval");
 const boom = require("@hapi/boom");
-const uaRoute = {
+const baiduAssoRoute = {
   method: "GET",
   path: "/service/baidu/ass",
   handler: async ({ query }, h) => {
@@ -64,4 +64,4 @@ const uaRoute = {
     return resp;
   },
 };
-module.exports = [uaRoute];
+module.exports = [baiduAssoRoute];

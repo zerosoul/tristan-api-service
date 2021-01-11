@@ -1,30 +1,27 @@
 const axios = require("axios").default;
 const boom = require("@hapi/boom");
-const bingWPRoute = {
+const covidDataRoute = {
   method: "GET",
-  path: "/service/bing/wp/{days?}",
+  path: "/service/animals/{ani?}",
   handler: async ({ params, query }, h) => {
-    const { days = 1 } = params;
+    const { ani = "shibes" } = params;
+    const { count = 10 } = query;
     console.log({ params });
     try {
       const resp = await axios.get(
-        // mkt=cn-zh
-        `https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=${
-          days || 1
-        }`,
+        `https://shibe.online/api/${ani}?count=${count}&urls=false`,
         {
           headers: {
             Accept: "application/json",
           },
         }
       );
-      console.log({ resp });
-      const { images = [], tooltips } = resp.data;
-      if (images.length !== 0) {
+      const results = resp.data;
+      if (results) {
         return h.response({
           code: 0,
           msg: "正常响应",
-          data: images,
+          data: results.map((r) => `https://cdn.shibe.online/${ani}/${r}.jpg`),
         });
       } else {
         return boom.badRequest("请求有误");
@@ -35,4 +32,4 @@ const bingWPRoute = {
     }
   },
 };
-module.exports = [bingWPRoute];
+module.exports = [covidDataRoute];
