@@ -1,7 +1,21 @@
 const cheerioReq = require("cheerio-req");
 const boom = require("@hapi/boom");
 // 公众号热文
+let cache = {};
 const getLinks = () => {
+  let date = new Date();
+  // 每隔一小时请求一次
+  let key = `${date.getMonth() + 1}${date.getDate()}${date.getHours()}`;
+  if (cache[key]) {
+    resovle({
+      error: false,
+      data: cache[key].map((obj) => {
+        obj.cache = true;
+        return obj;
+      }),
+    });
+    return;
+  }
   return new Promise((resovle, reject) => {
     cheerioReq("https://qnmlgb.tech/", (err, $) => {
       if (err) {
@@ -22,6 +36,8 @@ const getLinks = () => {
         });
         // console.log($links.eq(i).text(), $links.eq(i).attr("href"));
       }
+      // 刷新缓存
+      cache = { [`${key}`]: hots };
       resovle({ error: false, data: hots });
     });
   });
