@@ -27,17 +27,13 @@ dotenv.config({
   path: process.env.NODE_ENV == 'development' ? devEnvFile : proEnvFile,
 });
 // 跨域请求设置
-const AllowDomains =
-  process.env.NODE_ENV == 'development'
-    ? ['*']
-    : [
-        'chrome-extension://ccegbnlnelhgaefimiaklaindffpfcmh',
-        'https://zerosoul.github.io',
-        'https://yangerxiao.com',
-        'https://*.yangerxiao.com',
-        'https://nicegoodthings.com',
-        'https://*.nicegoodthings.com',
-      ];
+const AllowDomains = process.env.NODE_ENV == 'development' ? ['*'] : ['*'];
+//  'chrome-extension://ccegbnlnelhgaefimiaklaindffpfcmh',
+//   'https://zerosoul.github.io',
+//   'https://yangerxiao.com',
+//   'https://*.yangerxiao.com',
+//   'https://nicegoodthings.com',
+//   'https://*.nicegoodthings.com',
 const init = async () => {
   const server = Hapi.server({
     port: 3008,
