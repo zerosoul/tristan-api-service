@@ -11,15 +11,25 @@ const authingRoute = {
   path: '/service/authing/{username}/udf/{key?}',
   handler: async ({ params }, h) => {
     const { username = '', key = 'widget_data' } = params;
-    const currUser = await managementClient.users.find({ username });
-    console.log({ currUser });
-    // let { users } = managementClient;
-    // console.log({ username, managementClient, users });
-    if (!currUser) {
+    try {
+      const currUser = await managementClient.users.find({ username });
+      console.log({ currUser });
+      // let { users } = managementClient;
+      // console.log({ username, managementClient, users });
+      if (!currUser) {
+        return h.response({
+          code: -1,
+          data: null,
+          msg: '用户不存在',
+        });
+      }
+    } catch (error) {
+      console.log({ error });
+      let { code, message } = error;
       return h.response({
-        code: -1,
+        code,
         data: null,
-        msg: '用户不存在',
+        msg: message,
       });
     }
     // try {
