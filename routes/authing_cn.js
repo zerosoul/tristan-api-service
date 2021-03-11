@@ -23,6 +23,19 @@ const authingRoute = {
           msg: '用户不存在',
         });
       }
+      const resp = await managementClient.users.getUdfValue(currUser.id);
+      try {
+        resp[key] = JSON.parse(resp[key]);
+      } catch (error) {
+        resp[key] = null;
+      }
+      if (resp) {
+        return h.response({
+          code: 0,
+          data: resp[key],
+          msg: '请求成功',
+        });
+      }
     } catch (error) {
       console.log({ error });
       let { code, message } = error;
@@ -32,24 +45,7 @@ const authingRoute = {
         msg: message,
       });
     }
-    // try {
-    const resp = await managementClient.users.getUdfValue(currUser.id);
-    // } catch (error) {
-    //   console.log({ error });
-    // }
-    // console.log(resp);
-    try {
-      resp[key] = JSON.parse(resp[key]);
-    } catch (error) {
-      resp[key] = null;
-    }
-    if (resp) {
-      return h.response({
-        code: 0,
-        data: resp[key],
-        msg: '请求成功',
-      });
-    }
+
     return h.response({
       code: -1,
       msg: msg,
