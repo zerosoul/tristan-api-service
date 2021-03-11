@@ -8,18 +8,26 @@ const managementClient = new ManagementClient({
 // authing 相关的接口
 const authingRoute = {
   method: 'GET',
-  path: '/service/authing/{userId}/udf/{key?}',
+  path: '/service/authing/{username}/udf/{key?}',
   handler: async ({ params }, h) => {
-    const { userId = 0, key = 'widget_data' } = params;
+    const { username = '', key = 'widget_data' } = params;
+    const currUser = await managementClient.users.find({ username });
+    console.log({ currUser });
     // let { users } = managementClient;
-    // console.log({ userId, managementClient, users });
-
+    // console.log({ username, managementClient, users });
+    if (!currUser) {
+      return h.response({
+        code: -1,
+        data: null,
+        msg: '用户不存在',
+      });
+    }
     // try {
-    const resp = await managementClient.users.getUdfValue(userId);
+    const resp = await managementClient.users.getUdfValue(currUser.id);
     // } catch (error) {
     //   console.log({ error });
     // }
-    console.log(resp);
+    // console.log(resp);
     try {
       resp[key] = JSON.parse(resp[key]);
     } catch (error) {
