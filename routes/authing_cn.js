@@ -78,10 +78,12 @@ const appendVeraHistoryRoute = {
       }
       tmp.unshift(payload);
       try {
-        await managementClient.users.setUdfValue(currUser.id, { [key]: JSON.stringify(tmp) });
+        await managementClient.users.setUdfValue(currUser.id, {
+          [key]: JSON.stringify(tmp.sort((a, b) => b.timestamp - a.timestamp)),
+        });
         return h.response({
           code: 0,
-          data: tmp.sort((a, b) => b.timestamp - a.timestamp),
+          data: tmp,
           msg: '追加成功',
         });
       } catch (error) {
