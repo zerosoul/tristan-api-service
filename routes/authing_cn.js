@@ -105,4 +105,83 @@ const appendVeraHistoryRoute = {
     }
   },
 };
-module.exports = [udfGetRoute, appendVeraHistoryRoute];
+const veraHistoryUserListRoute = {
+  method: 'GET',
+  path: '/service/authing/vera/{username}/userlist',
+  handler: async ({ params }, h) => {
+    const { username = '' } = params;
+    try {
+      const currUser = await managementClient.users.find({ username });
+      console.log({ username, currUser });
+      if (!currUser) {
+        return h.response({
+          code: -1,
+          data: null,
+          msg: '用户不存在',
+        });
+      }
+      const udfData = await managementClient.users.getUdfValue(currUser.id);
+      console.log({ udfData });
+      let key = 'vera';
+      let tmp = [];
+      try {
+        tmp = JSON.parse(udfData[key]);
+      } catch (error) {
+        tmp = [];
+      }
+      let users = [];
+      tmp.forEach((t) => {
+        console.log({ t });
+        let { host = null, username = null, participants = [] } = t;
+        let uns = [...new Set([host, username, ...participants])];
+        users.push(...uns);
+      });
+      users = [...new Set(users)].filter((u) => {
+        return u && u !== username;
+      });
+      let promises = users.map((u) => {
+        return managementClient.users.find({ username: u });
+      });
+      const resps = await Promise.all(promises);
+      return h.response({
+        code: 0,
+        data: resps.map((user) => {
+          let { username, name, nickname, photo } = user;
+          return {
+            username,
+            name,
+            nickname,
+            photo,
+          };
+        }),
+        msg: '获取用户列表成功',
+      });
+      // try {
+      //   await managementClient.users.setUdfValue(currUser.id, {
+      //     [key]: JSON.stringify(tmp.sort((a, b) => b.timestamp - a.timestamp)),
+      //   });
+      //   return h.response({
+      //     code: 0,
+      //     data: tmp,
+      //     msg: '追加成功',
+      //   });
+      // } catch (error) {
+      //   let { code, message } = error;
+      //   return h.response({
+      //     code,
+      //     data: null,
+      //     msg: message,
+      //   });
+      // }
+    } catch (error) {
+      console.log({ error });
+      let { code, message } = error;
+      return h.response({
+        code,
+        data: null,
+        msg: message,
+      });
+    }
+  },
+};
+module.exports = [udfGetRoute, appendVeraHistoryRoute, veraHistoryUserListRoute];
