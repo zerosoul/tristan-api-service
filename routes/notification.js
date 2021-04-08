@@ -4,7 +4,9 @@ const webpush = require('web-push');
 // web push
 const publicVapidKey = 'BMrfFtMtL9IWl9vchDbbbYzJlbQwplyZ_fbv8Pei8gPNna_Dr1O-Ng7U7fy0LLqz5RKIxEytTIzyk6TLrcKbN30';
 const privateVapidKey = 'E5gpbs9Y6r5TscHC64Ce9-hXojA9I1qQL0kuvX8Jz5Y';
-webpush.setVapidDetails('mailto:test@test.com', publicVapidKey, privateVapidKey);
+// VAPID keys should only be generated only once.
+// const vapidKeys = webpush.generateVAPIDKeys();
+webpush.setVapidDetails('mailto:yanggc888@163.com', publicVapidKey, privateVapidKey);
 
 // authing management
 const { ManagementClient } = require('authing-js-sdk');
@@ -12,7 +14,6 @@ const managementClient = new ManagementClient({
   userPoolId: '6034a31382f5d09e3b5a15fa',
   secret: process.env.AUTHING_SECRET,
 });
-
 const notificationPostRoute = {
   method: 'POST',
   path: '/service/notification/{username?}',
@@ -80,7 +81,18 @@ const testPushRoute = {
         console.log(currUser.id, { params, notification });
         if (notification) {
           const notify = { title: 'Hey, this is a push notification!' };
-          const pushResp = await webpush.sendNotification(JSON.parse(notification), JSON.stringify(notify));
+          let webpushConfig =
+            process.env.NODE_ENV == 'development'
+              ? {
+                  proxy: 'http://127.0.0.1:8118',
+                }
+              : {};
+          console.log({ webpushConfig });
+          const pushResp = await webpush.sendNotification(
+            JSON.parse(notification),
+            JSON.stringify(notify),
+            webpushConfig,
+          );
           console.log({ pushResp });
           return h.response({
             code: 0,
