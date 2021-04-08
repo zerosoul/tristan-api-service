@@ -2,8 +2,8 @@ const axios = require('axios').default;
 const boom = require('@hapi/boom');
 const webpush = require('web-push');
 // web push
-const publicVapidKey = 'BMrfFtMtL9IWl9vchDbbbYzJlbQwplyZ_fbv8Pei8gPNna_Dr1O-Ng7U7fy0LLqz5RKIxEytTIzyk6TLrcKbN30';
-const privateVapidKey = 'E5gpbs9Y6r5TscHC64Ce9-hXojA9I1qQL0kuvX8Jz5Y';
+const publicVapidKey = 'BLlQ54pZmqwU6k9p8IHOfSHAIslTf-kVZulE2TEI9ycrV5I_bjXFP9rrH94APAEKD_Rw31n3mwYw_1jhU-DsobQ';
+const privateVapidKey = 'HEjUtgDSYHXBDXpi6xBBcZj3fmSJ8zGs1CK7_ftOf90';
 // VAPID keys should only be generated only once.
 // const vapidKeys = webpush.generateVAPIDKeys();
 webpush.setVapidDetails('mailto:yanggc888@163.com', publicVapidKey, privateVapidKey);
