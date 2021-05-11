@@ -121,6 +121,7 @@ const veraHistoryUserListRoute = {
         });
       }
       const udfData = await managementClient.users.getUdfValue(currUser.id);
+      const tracerId = udfData['notification'];
       console.log({ udfData });
       let key = 'vera';
       let tmp = [];
@@ -152,6 +153,7 @@ const veraHistoryUserListRoute = {
             name,
             nickname,
             photo,
+            tracerId
           };
         }),
         msg: '获取用户列表成功',
