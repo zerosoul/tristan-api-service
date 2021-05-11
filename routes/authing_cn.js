@@ -121,7 +121,6 @@ const veraHistoryUserListRoute = {
         });
       }
       const udfData = await managementClient.users.getUdfValue(currUser.id);
-      const tracerId = udfData['notification'];
       console.log({ udfData });
       let key = 'vera';
       let tmp = [];
@@ -144,16 +143,20 @@ const veraHistoryUserListRoute = {
         return managementClient.users.find({ username: u });
       });
       const resps = await Promise.all(promises);
+      const tracerIds = Object.values(
+            await managementClient.users.getUdfValueBatch(resps.map((it) => it.id))
+          ).map((it) => it.notification);;
+
       return h.response({
         code: 0,
-        data: resps.map((user) => {
+        data: resps.map((user, idx) => {
           let { username, name, nickname, photo } = user;
           return {
             username,
             name,
             nickname,
             photo,
-            tracerId
+            tracerId: tracerIds[idx]
           };
         }),
         msg: '获取用户列表成功',
