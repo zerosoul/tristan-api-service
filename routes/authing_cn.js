@@ -145,7 +145,7 @@ const veraHistoryUserListRoute = {
       const resps = await Promise.all(promises);
       const tracerIds = Object.values(
             await managementClient.users.getUdfValueBatch(resps.map((it) => it.id))
-          ).map((it) => it.notification);;
+          ).map((it) => it.notification ? it.notification : '');
 
       return h.response({
         code: 0,
