@@ -112,7 +112,6 @@ const veraHistoryUserListRoute = {
     const { username = '' } = params;
     try {
       const currUser = await managementClient.users.find({ username });
-      console.log({ username, currUser });
       if (!currUser) {
         return h.response({
           code: -1,
@@ -121,7 +120,7 @@ const veraHistoryUserListRoute = {
         });
       }
       const udfData = await managementClient.users.getUdfValue(currUser.id);
-      console.log({ udfData });
+      // console.log({ udfData });
       let key = 'vera';
       let tmp = [];
       try {
@@ -131,14 +130,17 @@ const veraHistoryUserListRoute = {
       }
       let users = [];
       tmp.forEach((t) => {
-        console.log({ t });
+        // console.log({ t });
         let { host = null, username = null, participants = [] } = t;
-        let uns = [...new Set([host, username, ...participants])];
+        // 需要过滤下脏数据
+        let filtered = participants.filter((p) => typeof p == 'string');
+        let uns = [...new Set([host, username, ...filtered])];
         users.push(...uns);
       });
       users = [...new Set(users)].filter((u) => {
         return u && u !== username;
       });
+      console.log({ users });
       let promises = users.map((u) => {
         return managementClient.users.find({ username: u });
       });
