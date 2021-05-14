@@ -5,6 +5,10 @@ const fs = require('fs');
 const Hapi = require('@hapi/hapi');
 const router = require('hapi-router');
 
+const hapio = require('hapio');
+
+const { setupSocket } = require('./ws/notification');
+
 const devEnvFile = `${__dirname}/.env.local`;
 const proEnvFile = `${__dirname}/.env`;
 
@@ -53,6 +57,10 @@ const init = async () => {
       routes: 'routes/*.js', // uses glob to include files
     },
   });
+  
+  await server.register(hapio);
+
+  setupSocket(server.plugins.hapio.io);
 
   await server.start();
   console.log('Server running on %s', server.info.uri);
