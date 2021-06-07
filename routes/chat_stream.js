@@ -1,9 +1,9 @@
-const axios = require('axios').default;
+// const axios = require('axios').default;
 const boom = require('@hapi/boom');
 const { StreamChat } = require('stream-chat');
 // instantiate your stream client using the API key and secret
 // the secret is only used server side and gives you full access to the API
-const serverClient = new StreamChat('fwcuynkafsqt', process.env.STREAM_API_SECRET);
+const serverClient = new StreamChat('jev2d4qqmsq9', process.env.STREAM_API_SECRET);
 serverClient.updateAppSettings({
   disable_permissions_checks: true,
 });
