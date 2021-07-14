@@ -67,10 +67,17 @@
   dependencies:
     "@hapi/hoek" "9.x.x"
 
-"@hapi/boom@9.x.x", "@hapi/boom@^9.1.0", "@hapi/boom@^9.1.2":
+"@hapi/boom@9.x.x", "@hapi/boom@^9.1.0":
   version "9.1.2"
   resolved "https://registry.npm.taobao.org/@hapi/boom/download/@hapi/boom-9.1.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40hapi%2Fboom%2Fdownload%2F%40hapi%2Fboom-9.1.2.tgz#48bd41d67437164a2d636e3b5bc954f8c8dc5e38"
   integrity sha1-SL1B1nQ3FkotY247W8lU+MjcXjg=
+  dependencies:
+    "@hapi/hoek" "9.x.x"
+
+"@hapi/boom@^9.1.3":
+  version "9.1.3"
+  resolved "https://registry.nlark.com/@hapi/boom/download/@hapi/boom-9.1.3.tgz#22cad56e39b7a4819161a99b1db19eaaa9b6cc6e"
+  integrity sha1-IsrVbjm3pIGRYambHbGeqqm2zG4=
   dependencies:
     "@hapi/hoek" "9.x.x"
 
@@ -132,10 +139,10 @@
   resolved "https://registry.nlark.com/@hapi/file/download/@hapi/file-2.0.0.tgz#2ecda37d1ae9d3078a67c13b7da86e8c3237dfb9"
   integrity sha1-Ls2jfRrp0weKZ8E7fahujDI337k=
 
-"@hapi/hapi@^20.1.3":
-  version "20.1.3"
-  resolved "https://registry.nlark.com/@hapi/hapi/download/@hapi/hapi-20.1.3.tgz#f4d000e429769d61df59c39cc66dfa252192eff6"
-  integrity sha1-9NAA5Cl2nWHfWcOcxm36JSGS7/Y=
+"@hapi/hapi@^20.1.5":
+  version "20.1.5"
+  resolved "https://registry.nlark.com/@hapi/hapi/download/@hapi/hapi-20.1.5.tgz#235dbc6bcc72960724696028c5145c0ecfe6962d"
+  integrity sha1-I128a8xylgckaWAoxRRcDs/mli0=
   dependencies:
     "@hapi/accept" "^5.0.1"
     "@hapi/ammo" "^5.0.1"
@@ -294,6 +301,20 @@
     "@hapi/boom" "9.x.x"
     "@hapi/bourne" "2.x.x"
     "@hapi/hoek" "9.x.x"
+
+"@humanwhocodes/config-array@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.nlark.com/@humanwhocodes/config-array/download/@humanwhocodes/config-array-0.5.0.tgz#1407967d4c6eecd7388f83acf1eaf4d0c6e58ef9"
+  integrity sha1-FAeWfUxu7Nc4j4Os8er00Mbljvk=
+  dependencies:
+    "@humanwhocodes/object-schema" "^1.2.0"
+    debug "^4.1.1"
+    minimatch "^3.0.4"
+
+"@humanwhocodes/object-schema@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.nlark.com/@humanwhocodes/object-schema/download/@humanwhocodes/object-schema-1.2.0.tgz#87de7af9c231826fdd68ac7258f77c429e0e5fcf"
+  integrity sha1-h956+cIxgm/daKxyWPd8Qp4OX88=
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -580,20 +601,15 @@ astral-regex@^2.0.0:
   resolved "https://registry.npm.taobao.org/astral-regex/download/astral-regex-2.0.0.tgz#483143c567aeed4785759c0865786dc77d7d2e31"
   integrity sha1-SDFDxWeu7UeFdZwIZXhtx319LjE=
 
-async-limiter@~1.0.0:
-  version "1.0.1"
-  resolved "https://registry.npm.taobao.org/async-limiter/download/async-limiter-1.0.1.tgz#dd379e94f0db8310b08291f9d64c3209766617fd"
-  integrity sha1-3TeelPDbgxCwgpH51kwyCXZmF/0=
-
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.npm.taobao.org/asynckit/download/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
 
-authing-js-sdk@^4.20.19:
-  version "4.20.19"
-  resolved "https://registry.nlark.com/authing-js-sdk/download/authing-js-sdk-4.20.19.tgz#1e03909d30afdd9dc6ef333e3b5c9b7dafc8900b"
-  integrity sha1-HgOQnTCv3Z3G7zM+O1ybfa/IkAs=
+authing-js-sdk@^4.21.5:
+  version "4.21.5"
+  resolved "https://registry.nlark.com/authing-js-sdk/download/authing-js-sdk-4.21.5.tgz#64568113c687e5c0400143cc4a506bb532e21396"
+  integrity sha1-ZFaBE8aH5cBAAUPMSlBrtTLiE5Y=
   dependencies:
     axios "^0.19.2"
     crypto-js "^4.0.0"
@@ -610,10 +626,10 @@ aws4@^1.8.0:
   resolved "https://registry.nlark.com/aws4/download/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha1-1h9G2DslGSUOJ4Ta9bCUeai0HFk=
 
-axe-core@4.2.1:
-  version "4.2.1"
-  resolved "https://registry.nlark.com/axe-core/download/axe-core-4.2.1.tgz#2e50bcf10ee5b819014f6e342e41e45096239e34"
-  integrity sha1-LlC88Q7luBkBT240LkHkUJYjnjQ=
+axe-core@4.2.3:
+  version "4.2.3"
+  resolved "https://registry.nlark.com/axe-core/download/axe-core-4.2.3.tgz#2a3afc332f0031b42f602f4a3de03c211ca98f72"
+  integrity sha1-Kjr8My8AMbQvYC9KPeA8IRypj3I=
 
 axios-https-proxy-fix@^0.17.1:
   version "0.17.1"
@@ -1425,13 +1441,14 @@ eslint-visitor-keys@^2.0.0:
   resolved "https://registry.nlark.com/eslint-visitor-keys/download/eslint-visitor-keys-2.1.0.tgz#f65328259305927392c938ed44eb0a5c9b2bd303"
   integrity sha1-9lMoJZMFknOSyTjtROsKXJsr0wM=
 
-eslint@^7.28.0:
-  version "7.28.0"
-  resolved "https://registry.nlark.com/eslint/download/eslint-7.28.0.tgz?cache=0&sync_timestamp=1622846696960&other_urls=https%3A%2F%2Fregistry.nlark.com%2Feslint%2Fdownload%2Feslint-7.28.0.tgz#435aa17a0b82c13bb2be9d51408b617e49c1e820"
-  integrity sha1-Q1qheguCwTuyvp1RQIthfknB6CA=
+eslint@^7.30.0:
+  version "7.30.0"
+  resolved "https://registry.nlark.com/eslint/download/eslint-7.30.0.tgz#6d34ab51aaa56112fd97166226c9a97f505474f8"
+  integrity sha1-bTSrUaqlYRL9lxZiJsmpf1BUdPg=
   dependencies:
     "@babel/code-frame" "7.12.11"
     "@eslint/eslintrc" "^0.4.2"
+    "@humanwhocodes/config-array" "^0.5.0"
     ajv "^6.10.0"
     chalk "^4.0.0"
     cross-spawn "^7.0.2"
@@ -2406,12 +2423,12 @@ lighthouse-stack-packs@^1.5.0:
   resolved "https://registry.nlark.com/lighthouse-stack-packs/download/lighthouse-stack-packs-1.5.0.tgz#c191f2b94db21602254baaebfb0bb90307a00ffa"
   integrity sha1-wZHyuU2yFgIlS6rr+wu5AwegD/o=
 
-lighthouse@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.nlark.com/lighthouse/download/lighthouse-8.0.0.tgz?cache=0&sync_timestamp=1623044252197&other_urls=https%3A%2F%2Fregistry.nlark.com%2Flighthouse%2Fdownload%2Flighthouse-8.0.0.tgz#d55ec021b1e8d84ddb5ec5473fd706446805a2cd"
-  integrity sha1-1V7AIbHo2E3bXsVHP9cGRGgFos0=
+lighthouse@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.nlark.com/lighthouse/download/lighthouse-8.1.0.tgz#c3c0395dd8446fdb08452af678c4edc47a8bfa0e"
+  integrity sha1-w8A5XdhEb9sIRSr2eMTtxHqL+g4=
   dependencies:
-    axe-core "4.2.1"
+    axe-core "4.2.3"
     chrome-launcher "^0.14.0"
     configstore "^5.0.1"
     csp_evaluator "^1.0.1"
@@ -2438,7 +2455,7 @@ lighthouse@^8.0.0:
     speedline-core "^1.4.3"
     third-party-web "^0.12.2"
     update-notifier "^4.1.0"
-    ws "3.3.2"
+    ws "^7.0.0"
     yargs "^16.1.1"
     yargs-parser "^20.2.4"
 
@@ -2664,10 +2681,10 @@ node-fetch@^2.6.1:
   resolved "https://registry.npm.taobao.org/node-fetch/download/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha1-BFvTI2Mfdu0uK1VXM5RBa2OaAFI=
 
-nodemon@^2.0.7:
-  version "2.0.7"
-  resolved "https://registry.nlark.com/nodemon/download/nodemon-2.0.7.tgz#6f030a0a0ebe3ea1ba2a38f71bf9bab4841ced32"
-  integrity sha1-bwMKCg6+PqG6Kjj3G/m6tIQc7TI=
+nodemon@^2.0.12:
+  version "2.0.12"
+  resolved "https://registry.nlark.com/nodemon/download/nodemon-2.0.12.tgz#5dae4e162b617b91f1873b3bfea215dd71e144d5"
+  integrity sha1-Xa5OFithe5Hxhzs7/qIV3XHhRNU=
   dependencies:
     chokidar "^3.2.2"
     debug "^3.2.6"
@@ -2912,10 +2929,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.nlark.com/prettier/download/prettier-2.3.1.tgz#76903c3f8c4449bc9ac597acefa24dc5ad4cbea6"
-  integrity sha1-dpA8P4xESbyaxZes76JNxa1MvqY=
+prettier@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.nlark.com/prettier/download/prettier-2.3.2.tgz?cache=0&sync_timestamp=1624696259185&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fprettier%2Fdownload%2Fprettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
+  integrity sha1-7ygKBewlNxLkhiM9tcbyNEHnNC0=
 
 progress@^2.0.0:
   version "2.0.3"
@@ -3122,7 +3139,7 @@ robots-parser@^2.0.1:
   resolved "https://registry.npm.taobao.org/robots-parser/download/robots-parser-2.3.0.tgz#d79e86e26e13fa0a806adbc37f4cf1b96aebc8c3"
   integrity sha1-156G4m4T+gqAatvDf0zxuWrryMM=
 
-safe-buffer@5.1.2, safe-buffer@~5.1.0:
+safe-buffer@5.1.2:
   version "5.1.2"
   resolved "https://registry.npm.taobao.org/safe-buffer/download/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
   integrity sha1-mR7GnSluAxN0fVm9/St0XDX4go0=
@@ -3332,10 +3349,10 @@ stack-trace@0.0.10:
   resolved "https://registry.npm.taobao.org/statuses/download/statuses-1.5.0.tgz?cache=0&sync_timestamp=1609654066899&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstatuses%2Fdownload%2Fstatuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
 
-stream-chat@^3.10.0:
-  version "3.10.0"
-  resolved "https://registry.nlark.com/stream-chat/download/stream-chat-3.10.0.tgz#d985a88263f39e4841cd2254bb1b65a68ba1b3d4"
-  integrity sha1-2YWogmPznkhBzSJUuxtlpouhs9Q=
+stream-chat@^3.12.0:
+  version "3.12.0"
+  resolved "https://registry.nlark.com/stream-chat/download/stream-chat-3.12.0.tgz#5a6f0cb7ebd277dbf6174d92bb1868a1972524a9"
+  integrity sha1-Wm8Mt+vSd9v2F02SuxhooZclJKk=
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@types/jsonwebtoken" "^8.5.0"
@@ -3570,11 +3587,6 @@ ul@^5.2.13:
     deffy "^2.2.2"
     typpy "^2.3.4"
 
-ultron@~1.1.0:
-  version "1.1.1"
-  resolved "https://registry.npm.taobao.org/ultron/download/ultron-1.1.1.tgz#9fe1536a10a664a65266a1e3ccf85fd36302bc9c"
-  integrity sha1-n+FTahCmZKZSZqHjzPhf02MCvJw=
-
 undefsafe@^2.0.3:
   version "2.0.3"
   resolved "https://registry.npm.taobao.org/undefsafe/download/undefsafe-2.0.3.tgz#6b166e7094ad46313b2202da7ecc2cd7cc6e7aae"
@@ -3691,10 +3703,10 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-web-push@^3.4.4:
-  version "3.4.4"
-  resolved "https://registry.nlark.com/web-push/download/web-push-3.4.4.tgz#b11523ada0f4b8c2481f65d1d059acd45ba27ca0"
-  integrity sha1-sRUjraD0uMJIH2XR0Fms1FuifKA=
+web-push@^3.4.5:
+  version "3.4.5"
+  resolved "https://registry.nlark.com/web-push/download/web-push-3.4.5.tgz#f94074ff150538872c7183e4d8881c8305920cf1"
+  integrity sha1-+UB0/xUFOIcscYPk2IgcgwWSDPE=
   dependencies:
     asn1.js "^5.3.0"
     http_ece "1.1.0"
@@ -3772,14 +3784,10 @@ write-file-atomic@^3.0.0:
     signal-exit "^3.0.2"
     typedarray-to-buffer "^3.1.5"
 
-ws@3.3.2:
-  version "3.3.2"
-  resolved "https://registry.npm.taobao.org/ws/download/ws-3.3.2.tgz?cache=0&sync_timestamp=1618734170256&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fws%2Fdownload%2Fws-3.3.2.tgz#96c1d08b3fefda1d5c1e33700d3bfaa9be2d5608"
-  integrity sha1-lsHQiz/v2h1cHjNwDTv6qb4tVgg=
-  dependencies:
-    async-limiter "~1.0.0"
-    safe-buffer "~5.1.0"
-    ultron "~1.1.0"
+ws@^7.0.0:
+  version "7.5.3"
+  resolved "https://registry.nlark.com/ws/download/ws-7.5.3.tgz?cache=0&sync_timestamp=1625897053615&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fws%2Fdownload%2Fws-7.5.3.tgz#160835b63c7d97bfab418fc1b8a9fced2ac01a74"
+  integrity sha1-Fgg1tjx9l7+rQY/BuKn87SrAGnQ=
 
 ws@^7.2.3, ws@^7.4.4, ws@~7.4.2:
   version "7.4.5"
