@@ -1,6 +1,6 @@
 {
   "name": "tristan-api-service",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "API service by Tristan & for Tristan",
   "main": "index.js",
   "scripts": {
@@ -17,33 +17,33 @@
   "author": "Tristan",
   "license": "ISC",
   "dependencies": {
-    "@hapi/boom": "^9.1.3",
-    "@hapi/hapi": "^20.1.5",
-    "@vitalets/google-translate-api": "^4.0.0",
-    "authing-js-sdk": "^4.21.5",
-    "axios": "^0.21.1",
+    "@hapi/boom": "^10.0.0",
+    "@hapi/hapi": "^20.2.2",
+    "@vitalets/google-translate-api": "^9.0.0",
+    "authing-js-sdk": "^4.23.35",
+    "axios": "^1.1.3",
     "cheerio-req": "^1.2.4",
-    "chrome-launcher": "^0.14.0",
-    "crypto-js": "^4.0.0",
-    "dotenv": "^10.0.0",
+    "chrome-launcher": "^0.15.1",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.0.3",
     "google-translate-open-api": "^1.3.7",
     "hapi-router": "^4.0.1",
     "hapio": "^2.0.0",
     "iconv-lite": "^0.6.3",
     "json-eval": "^1.0.9",
-    "lighthouse": "^8.1.0",
-    "node-fetch": "^2.6.1",
+    "lighthouse": "^9.6.8",
+    "node-fetch": "^3.2.10",
     "peer": "^0.6.1",
-    "stream-chat": "^3.12.0",
+    "stream-chat": "^8.1.0",
     "useragent": "^2.3.0",
-    "uuid": "^8.3.2",
-    "web-push": "^3.4.5"
+    "uuid": "^9.0.0",
+    "web-push": "^3.5.0"
   },
   "devDependencies": {
-    "eslint": "^7.30.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "nodemon": "^2.0.12",
-    "prettier": "^2.3.2"
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1"
   }
 }
